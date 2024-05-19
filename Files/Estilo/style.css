@@ -1,0 +1,419 @@
+/* Importando fontes */
+@font-face {
+  font-family: "poppins-light";
+  src: url("Fontes/Poppins/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins-light-italic";
+  src: url("Fontes/Poppins/Poppins-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins-medium";
+  src: url("Fontes/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins-semibold";
+  src: url("Fontes/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
+/* Personalizando o scroll da página */
+html ::-webkit-scrollbar {
+  width: 11px;
+}
+html ::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  border: 2px solid rgb(240, 240, 240);
+  background: #8cc63f;
+}
+html ::-webkit-scrollbar-track {
+  background: rgb(240, 240, 240);
+}
+
+/* Resetando as configurações padrões da página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cor de fundo da página */
+body {
+  background-color: white;
+}
+
+/* Retângulo que todo o conteúdo está. Limitado em 1700px de largura */
+.container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  height: auto;
+  width: 100%;
+  max-width: 1700px;
+
+  /* Centralizando a página */
+  margin: 0 auto;
+
+  background-color: white;
+}
+
+/* Cabeçalho - Elemento-pai */
+.header {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  height: auto;
+
+  background-color: white;
+}
+
+/* Elemento-pai em relação ao Logo e Elemento-Filho em relação ao cabeçalho */
+.logo {
+  padding: 20px 0;
+}
+
+.logo img {
+  width: 60vw;
+  max-width: 300px;
+}
+
+/* Retângulo verde */
+.quadro-inicial {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 95%;
+  height: auto;
+
+  border-radius: 10px;
+  padding: 20px 0 20px 0;
+
+  background-color: #8cc63f;
+}
+
+.intro {
+  text-align: justify;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #a5d86379;
+}
+
+.intro p {
+  font-family: "poppins-light";
+  color: #262626;
+  font-size: 14px;
+}
+
+.intro p span {
+  font-family: "poppins-medium";
+  color: #262626;
+  font-size: 14px;
+}
+
+.perguntas-iniciais {
+  display: flex;
+  flex-direction: column;
+
+  width: 85vw;
+  max-width: 500px;
+
+  gap: 20px;
+}
+
+.times,
+.jogadores {
+  display: flex;
+  flex-direction: row;
+}
+
+.texto-times,
+.texto-jogadores {
+  display: flex;
+  justify-content: left;
+  width: 70%;
+}
+
+.titulo {
+  font-family: "poppins-medium";
+  font-size: 18px;
+  color: white;
+}
+
+.subtitulo {
+  font-family: "poppins-light-italic";
+  font-size: 14px;
+  color: white;
+}
+
+.selecao-times,
+.selecao-jogadores {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 30%;
+}
+
+.selecao-times select,
+.selecao-jogadores select {
+  font-family: "poppins-semibold";
+  font-size: 14px;
+  color: #262626;
+
+  border-radius: 10px;
+  border: 1px solid #8cc63f;
+
+  padding: 3px 10px;
+
+  cursor: pointer;
+}
+
+.botao-prosseguir {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.botao-prosseguir input {
+  padding: 8px 25px;
+  border-radius: 30px;
+  border: 1px solid white;
+
+  font-family: "poppins-medium";
+  font-size: 14px;
+  color: #8cc63f;
+  background-color: white;
+
+  cursor: pointer;
+}
+
+.dev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  height: auto;
+  width: auto;
+  margin-top: 13px;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.logo-dev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-dev img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 11px;
+  width: auto;
+}
+
+.texto-dev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-dev p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "poppins-light";
+  font-size: 10px;
+  color: #e9ffcc;
+}
+
+.nomes-jogadores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+  height: auto;
+}
+
+#playersTitle {
+  font-family: "poppins-medium";
+  text-align: center;
+  font-size: 18px;
+  color: #262626;
+
+  margin-top: 20px;
+}
+
+#playerInputsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 85vw;
+  max-width: 500px;
+
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.input-text {
+  font-family: "poppins-light-italic";
+  font-size: 13px;
+
+  border-radius: 10px;
+  border: 1px solid #262626;
+
+  height: 33px;
+  width: calc(40vw - 10px);
+  min-width: 130px;
+  max-width: 240px;
+  padding: 0 15px;
+
+  cursor: auto;
+}
+
+#submitContainer {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+.submit-btn {
+  padding: 8px 25px;
+  border-radius: 30px;
+  border: 1px solid #8cc63f;
+
+  font-family: "poppins-medium";
+  font-size: 14px;
+  color: white;
+  background-color: #8cc63f;
+
+  cursor: pointer;
+}
+
+.times-gerados {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0 20px 0;
+
+  width: 100%;
+  height: auto;
+}
+
+#teamsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  width: 85vw;
+  max-width: 500px;
+
+  padding: 30px;
+  gap: 30px;
+
+  border: 1px solid #8cc63f;
+  border-radius: 30px;
+}
+
+.team-name {
+  font-family: "poppins-medium";
+  text-align: center;
+  font-size: 18px;
+  color: #8cc63f;
+}
+
+.player-name {
+  font-family: "poppins-medium";
+  font-size: 14px;
+}
+
+.botoes-finais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  width: 100%;
+  height: auto;
+}
+
+#buttonContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+
+  width: 85vw;
+  max-width: 500px;
+}
+
+#resetBtn {
+  color: rgb(255, 84, 84);
+  border: none;
+  background-color: transparent;
+  padding: 0;
+
+  font-family: "poppins-medium";
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+#copyBtn {
+  color: white;
+  background-color: #4776dd;
+  border: 1px solid #4776dd;
+
+  font-family: "poppins-medium";
+  font-size: 12px;
+  padding: 5px 15px;
+  border-radius: 30px;
+
+  cursor: pointer;
+}
+
+@media screen and (min-width: 840px) {
+  .botao-prosseguir input:hover {
+    color: white;
+    background-color: #8cc63f;
+    transition: ease 0.2s;
+  }
+
+  .submit-btn:hover {
+    color: #8cc63f;
+    background-color: white;
+    transition: ease 0.2s;
+  }
+
+  #resetBtn:hover {
+    color: rgb(255, 0, 0);
+    transition: ease 0.2s;
+  }
+
+  #copyBtn:hover {
+    color: #4776dd;
+    background-color: white;
+    transition: ease 0.2s;
+  }
+}
