@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Metadados padrões -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Metadados adicionais -->
+    <meta property="og:image" content="Estilo/ogimage/image-preview.png">
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Quantas vezes você já se viu gastando preciosos minutos apenas para montar os times antes daquela partida de futebol marcada com os amigos? O 'Tira Time Aí' é a solução para esse dilema! Com uma interface simplificada e intuitiva, nosso sistema gera times de forma aleatória, permitindo que você e seus amigos se organizem rapidamente e gastem suas energias apenas no jogo!">
+    <meta name="keywords"
+        content="Tirar time futebol, Gerador de equipes, Tirar time automático, Tira time aí, Gerar time automaticamente">
+    <meta name="author" content="Matheus Ari">
+
+    <!-- Infos da página -->
+    <title>Tira Time Aí | Gerador Aleatório de Equipes</title>
+    <link rel="shortcut icon" href="Estilo/Favicon/favicon.png" type="Tira Time Aí - Favicon">
+
+    <!-- Conectando o arquivo CSS -->
+    <link rel="stylesheet" href="Estilo/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Cabeçalho - Logo "Tira Time Aí" -->
+        <div class="header">
+            <div class="logo">
+                <img src="Estilo/Logo/img-tiratimeai-full.png" alt="Logo do projeto 'Tira Time Aí'">
+            </div>
+        </div>
+
+        <!-- Sessão inicial - Retângulo verde que nunca fica oculto -->
+        <div class="quadro-inicial">
+
+            <form class="perguntas-iniciais" id="form-times-jogadores">
+
+                <div class="intro">
+                    <p><span>Tira Time Aí</span> é um <span>gerador de equipes aleatórias</span>, ideal para quem
+                        gosta de jogar uma 'pelada'
+                        com os amigos, mas <span>não quer perder tempo na formação dos times</span>. Para utilizar a
+                        ferramenta,
+                        basta preencher as informações abaixo e <span>seguir o fluxo</span> que o próprio site te
+                        mostrará.</p>
+                </div>
+
+                <div class="times">
+                    <div class="texto-times">
+                        <label class="titulo" for="times">Quantidade de times:
+                            <p class="subtitulo">&bull; Máximo de 6 times.</p>
+                        </label>
+                    </div>
+                    <div class="selecao-times"
+                        aria-label="O usuário deve selecionar a quantidade de times que deseja gerar, de 2 a 6.">
+                        <select id="times" name="times">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="jogadores">
+                    <div class="texto-jogadores">
+                        <label class="titulo" for="jogadores">Jogadores por time:
+                            <p class="subtitulo">&bull; Máximo de 7 jogadores.</p>
+                        </label>
+                    </div>
+                    <div class="selecao-jogadores"
+                        aria-label="Aqui, o usuário seleciona a quantidade de jogadores por time, de 2 a 7.">
+                        <select id="jogadores" name="jogadores">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="botao-prosseguir">
+                    <input type="submit" value="Prosseguir"
+                        aria-label="Botão 'Prosseguir'. O usuário deve clicar nele após selecionar corretamente as opções anteriores.">
+                </div>
+
+            </form>
+            <!-- Créditos ao dev -->
+            <a href="https://matheusari.com/" target="_blank" class="dev">
+                <div class="texto-dev">
+                    <p>Desenvolvido por</p>
+                </div>
+
+                <div class="logo-dev">
+                    <img src="Estilo/Logo Matheus Ari/logo-matheusari.png" alt="Logo do Desenvolvedor">
+                </div>
+
+            </a>
+
+        </div>
+
+        <!-- Segunda sessão. O usuário informa o nome dos jogadores que participarão das equipes -->
+        <div class="nomes-jogadores">
+
+            <p id="playersTitle" style="display: none;">Nomeie os jogadores:</p>
+
+            <div id="playerInputsContainer" aria-label="Caixas de texto para inserir o nome dos jogadores."></div>
+
+            <div id="submitContainer"
+                aria-label="Botão 'Gerar'. Clicando nele, o programa gerará as equipes de forma aleatória"></div>
+
+        </div>
+
+        <!-- Sessão final. Mostra os times gerados -->
+        <div class="times-gerados">
+            <div id="teamsContainer" style="display: none;"></div>
+        </div>
+
+        <!-- Botões "Reiniciar" e "Copiar" ao final -->
+        <div class=" botoes-finais">
+            <div id="buttonContainer">
+
+                <button id="resetBtn" aria-label="Botão 'Reiniciar'. Recomeça o processo do zero."
+                    style="display: none;">Reiniciar</button>
+
+                <button id="copyBtn" aria-label="Botão 'Copiar'. Copia os times gerados para a área de transferência."
+                    style="display: none;">Copiar</button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Código pronto - Integrando o VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- Conectando o arquivo Javascript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
